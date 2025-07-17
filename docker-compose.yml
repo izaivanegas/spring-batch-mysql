@@ -1,0 +1,16 @@
+services:
+  mysqlservice2:
+    image: mysql:8.0
+    container_name: mysqlservice2
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: dbempleados
+      MYSQL_USER: izai
+      MYSQL_PASSWORD: vanegas
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:
